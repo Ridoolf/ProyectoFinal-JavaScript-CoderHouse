@@ -1,0 +1,23 @@
+//Diseño localstorage
+
+const users: [
+
+    {
+        email: 'bill@gates.com',
+        nombre: 'Bill',
+        password: '1234,'
+        carrito: [
+            {id:1, nombre:'producto 1'}
+  
+        ]
+    },
+    {
+        email: 'elon@musk.com',
+        nombre: 'Elon',
+        password: '4321,'
+        carrito: [
+            {id:1, nombre:'producto 1'}
+  
+        ]
+    }
+]

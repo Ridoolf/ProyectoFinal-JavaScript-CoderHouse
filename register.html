@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUNS N' BURGERS | Register</title>
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700&family=Stint+Ultra+Condensed&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--css-->
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <!--script-->
+    <script src="./js/register.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <img
+          src="./img/logo.png"
+          class="logo-burger"
+          alt="logo de la hamburgueseria"
+        />
+      </div>
+    </header>
+    <main>
+      <div class="container-login">
+        <h1>BUNS N' BURGER</h1>
+        <h2>REGISTRARSE</h2>
+        <input
+          type="text"
+          placeholder="nombre"
+          class="nombre-input input-register"
+          required
+        />
+        <input
+          class="email-input input-register"
+          type="text"
+          placeholder="email"
+        />
+        <input
+          class="password-input input-register"
+          type="password"
+          placeholder="contraseña"
+        />
+        <input
+          type="submit"
+          class="submit-input input-register"
+          value="REGISTRARSE"
+        />
+        <p class="register-txt">
+          Ya tenes cuenta?
+          <a href="./index.html"><button>INICIA SESION</button></a>
+        </p>
+        <!-- <button id="btn-registrar">Registrar</button>
+        <button id="btn-login">Login</button> -->
+      </div>
+    </main>
+    <footer>
+      <div class="container-footer home-footer">
+        <p>
+          PRIVACY POLICY | TERMS OF USE<br />
+          YOUR ARGENTINA PRIVACY RIGHTS | CHILDREN'S ONLINE PRIVACY POLICY<br />
+          INTEREST-BASED ADS | DO NOT SELL MY INFO<br />
+          &copy 2023 BUNS N' BURGERS
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
