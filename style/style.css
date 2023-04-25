@@ -183,18 +183,18 @@ input[type="submit"] {
   transform: scale(1.1);
 }
 
-.nav-bar a {
+.nav-bar .elemento-nav {
   text-decoration: none;
   color: #fff;
   font-family: "Nunito";
   font-size: 20px;
   transition: 0.2s;
+  width: 20px;
 }
 
-.nav-bar a:hover {
+.nav-bar .elemento-nav:hover {
   color: #8e6c5f;
   transform: scale(1.1);
-  border-bottom: 2px solid;
 }
 
 /*----------------- H O M E -----------------*/
@@ -251,7 +251,7 @@ input[type="submit"] {
 
 .card p {
   font-family: "Nunito";
-  font-size: 15px;
+  font-size: 12px;
   margin: 5px 10px;
 }
 
@@ -272,6 +272,31 @@ input[type="submit"] {
 .card .btn:hover {
   background-color: #49a373;
   transform: scale(1.1);
+}
+
+.adminCant {
+  display: flex;
+  margin: 5px;
+}
+
+.adminCant p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 3px;
+}
+
+.masCant,
+.menosCant,
+.delete {
+  cursor: pointer;
+}
+
+.adminCant .menosCant {
+  color: #ff0000;
+}
+
+.adminCant .masCant {
+  color: #49a373;
 }
 
 /*----------------- N O S O T R O S -----------------*/
@@ -394,6 +419,8 @@ input[type="submit"] {
 .carrito-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carrito-container p {
@@ -403,14 +430,11 @@ input[type="submit"] {
   font-style: italic;
   font-size: 20px;
   width: 60%;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #fff;
 }
 
 /*carrito con elemento*/
-
 .carrito-con-elemento {
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -432,6 +456,54 @@ input[type="submit"] {
   color: #fff;
   padding: 20px;
   font-family: "Nunito";
+}
+
+.adminCant-carrito {
+  display: flex;
+  margin: 10px;
+}
+
+.adminCant-carrito p {
+  user-select: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.adminCant-carrito .delete {
+  font-style: normal !important;
+}
+
+.adminCant-carrito p:hover {
+  transform: scale(1.4);
+}
+
+.infoDeCompra {
+  position: absolute;
+  top: 260px;
+  right: 100px;
+}
+
+.infoDeCompra p {
+  color: #fff;
+  font-family: "Nunito";
+  font-size: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #fff;
+}
+
+.infoDeCompra button {
+  background-color: #1ed315;
+  padding: 10px;
+  font-family: "Nunito";
+  border-radius: 10px;
+  margin: 30px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.infoDeCompra button:hover {
+  transform: scale(1.08);
+  background-color: #49a373;
 }
 
 /*----------------- F O O T E R -----------------*/

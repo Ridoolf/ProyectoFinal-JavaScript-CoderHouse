@@ -15,6 +15,8 @@ function login() {
   if (user) {
     localStorage.setItem("loggedUser", email);
 
+    loggedUser = email;
+
     window.location = "index.html";
   } else {
     alert("Usted no esta registrado.");

@@ -1,4 +1,36 @@
-function register() {
+const validateEmail = (email) => {
+  const emailRegEx = /^[^\s@]+@[^\s@]+\.[^s@]+$/;
+
+  return emailRegEx.test(email);
+};
+
+const validateOnlyText = (text) => {
+  const textRegEx = /^[a-zA-Z\s]+$/;
+
+  return textRegEx.test(text);
+};
+
+const validate = ({ email, nombre, password }) => {
+  if (!validateEmail(email)) {
+    return false;
+  }
+
+  if (
+    !validateOnlyText(nombre) ||
+    nombre.trim().length < 1 ||
+    nombre.trim().length > 10
+  ) {
+    return false;
+  }
+
+  if (password.length < 8 || password.length > 12) {
+    return false;
+  }
+
+  return true;
+};
+
+const register = async () => {
   let users = localStorage.getItem("users");
 
   if (users) {
@@ -14,13 +46,24 @@ function register() {
     carrito: [],
   };
 
-  users.push(newUser);
+  if (validate(newUser)) {
+    console.log("Registrar");
 
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("loggedUser", newUser.email);
+    await swal.fire({
+      text: "Registrado correctamente",
+      icon: "success",
+    });
 
-  window.location = "index.html";
-}
+    users.push(newUser);
+
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedUser", newUser.email);
+
+    window.location = "index.html";
+  } else {
+    swal.fire({ text: "Datos invalidos", icon: "error" });
+  }
+};
 
 const submitLogin = document.querySelector(".submit-input");
 

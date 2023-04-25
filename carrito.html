@@ -16,36 +16,21 @@
 
     <!--css-->
     <link rel="stylesheet" href="./style/style.css" />
-
-    <!--script-->
-    <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="nav-bar">
-        <a href="./index.html">Inicio</a>
-        <a href="./menu.html">Menu</a>
-        <img
-          src="./img/logo.png"
-          class="logo-burger"
-          alt="logo de la hamburgueseria"
-        />
-        <a href="./locales.html">Local</a>
-        <a href="#">Info</a>
-      </div>
-    </header>
-    <main>
-      <div class="carrito-container">
-        <p>El carrito esta vacio</p>
-      </div>
-      <div class="carrito-con-elemento">
-        <img src="./img/menu/doble.png" alt="" />
-        <p class="nombre-hamburguesa">Producto: Hamburguesa doble</p>
-        <p class="precio">Precio: $2100</p>
-        <p class="cantidad">Cantidad: 1</p>
-      </div>
+    <header></header>
+    <main class="carrito-main">
+      <div class="carrito-container"></div>
     </main>
-    <footer>
+    <div class="infoDeCompra">
+      <p class="totalAPagar">
+        Total a pagar: $<span id="totalAPagar">5478</span>
+      </p>
+      <button id="finalizarCompra" class="finalizarCompra">
+        Finalizar compra
+      </button>
+    </div>
+    <footer class="carrito-footer">
       <div class="container-footer info-footer">
         <p>
           PRIVACY POLICY | TERMS OF USE<br />
@@ -55,5 +40,13 @@
         </p>
       </div>
     </footer>
+
+    <!--JS-->
+    <script src="./js/common.js"></script>
+    <script src="./js/carrito.js"></script>
+
+    <script>
+      loadHeader();
+    </script>
   </body>
 </html>
