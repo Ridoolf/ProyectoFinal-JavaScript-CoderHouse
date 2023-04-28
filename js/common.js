@@ -1,3 +1,5 @@
+const API_KEY = "3d3b9b32aebc72e5e766753be6d6e4d5";
+
 const stockProductos = [
   {
     id: 1,
@@ -85,6 +87,23 @@ const stockProductos = [
   },
 ];
 
+const getWeatherData = async (position) => {
+  const { latitude, longitude } = position.coords;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=es`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  const weatherIcon = document.getElementById("weatherIcon");
+
+  weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+};
+
+const handleGetPositionError = (error) => {
+  console.log("Error al obtener la localización del usuario");
+};
+
 const getUserByEmail = (email) => {
   const users = localStorage.getItem("users");
 
@@ -144,12 +163,17 @@ const logout = () => {
 const loadHeader = () => {
   let headerHTML = `
                         <div class="nav-bar">
+                            <img
+                              src="" 
+                              id="weatherIcon" 
+                              alt="Icono del clima"
+                            />
                             <a href="./index.html" class="elemento-nav">Inicio</a>
                             <a href="./menu.html" class="elemento-nav">Menu</a>
                             <img
-                            src="./img/logo.png"
-                            class="logo-burger"
-                            alt="logo de la hamburgueseria"
+                              src="./img/logo.png"
+                              class="logo-burger"
+                              alt="logo de la hamburgueseria"
                             />
                             <a href="./locales.html" class="elemento-nav">Sucursales</a>
                             <a href="./nosotros.html" class="elemento-nav">Nosotros</a>
@@ -296,3 +320,12 @@ const actualizarCardCant = (idProducto) => {
 
   cantLabel.innerHTML = cant;
 };
+
+const vaciarCarrito = () => {
+  saveCart([], loggedUser);
+};
+
+navigator.geolocation.getCurrentPosition(
+  getWeatherData,
+  handleGetPositionError
+);

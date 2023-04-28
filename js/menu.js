@@ -1,13 +1,17 @@
-const loggedUser = getLoggedUser().email;
+let loggedUser = '';
 
-const cantProductosNumero = document.querySelector("header");
+const user = getLoggedUser();
 
-const menuContainer = document.querySelector("#menu-container");
+if (user) {
+  loggedUser = user.email;
+}
+
+const cantProductosNumero = document.querySelector('header');
+
+const menuContainer = document.querySelector('#menu-container');
 
 stockProductos.forEach((prod) => {
   const { id, nombre, desc, precio, img } = prod;
-
-  const cantProductoCarrito = getCantProductoCarrito(id);
 
   menuContainer.innerHTML += `
     <div class="card">
@@ -23,13 +27,13 @@ stockProductos.forEach((prod) => {
     `;
 
   const botonesAgregarCarrito = document.getElementsByClassName(
-    "btn-agregar-carrito"
+    'btn-agregar-carrito'
   );
 
   for (const botonAgregarCarrito of botonesAgregarCarrito) {
-    const id = botonAgregarCarrito.getAttribute("data-id-producto");
+    const id = botonAgregarCarrito.getAttribute('data-id-producto');
 
-    agregarProductoMasHandler(botonAgregarCarrito, id, "menu");
+    agregarProductoMasHandler(botonAgregarCarrito, id, 'menu');
   }
 });
 

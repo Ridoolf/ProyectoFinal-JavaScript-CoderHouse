@@ -1,11 +1,19 @@
 const loggedUser = getLoggedUser().email;
 
-const checkout = () => {
-  //CONTINUE
-  console.log("checkout");
+const checkout = async () => {
+  vaciarCarrito();
+
+  await swal.fire({
+    title: 'Gracias por su compra',
+    text: 'Pedido en preparación.',
+    icon: 'success',
+  });
+
+  window.location = 'menu.html';
 };
 
-//tillipablo@gmail.com
+const btnFinalizarCompra = document.getElementById('finalizarCompra');
+btnFinalizarCompra.addEventListener('click', checkout);
 
 const updateCartAmount = () => {
   const cart = getCartByUser(loggedUser);
@@ -15,15 +23,17 @@ const updateCartAmount = () => {
     0
   );
 
-  document.getElementById("totalAPagar").innerHTML = total;
+  document.getElementById('totalAPagar').innerHTML = total;
+
+  btnFinalizarCompra.disabled = !total;
 };
 
 const loadCart = () => {
   const cart = getCartByUser(loggedUser);
 
-  const carritoContainer = document.querySelector(".carrito-container");
+  const carritoContainer = document.querySelector('.carrito-container');
 
-  carritoContainer.innerHTML = "";
+  carritoContainer.innerHTML = '';
 
   if (cart.length > 0) {
     cart.forEach(({ nombre, precio, cantidad, img, id }) => {
@@ -42,31 +52,28 @@ const loadCart = () => {
                                 `;
     });
 
-    const botonesMasCant = document.getElementsByClassName("masCant");
+    const botonesMasCant = document.getElementsByClassName('masCant');
     for (const botonMasCant of botonesMasCant) {
-      const id = botonMasCant.getAttribute("data-id-producto");
-      agregarProductoMasHandler(botonMasCant, id, "cart");
+      const id = botonMasCant.getAttribute('data-id-producto');
+      agregarProductoMasHandler(botonMasCant, id, 'cart');
     }
 
-    const botonesMenosCant = document.getElementsByClassName("menosCant");
+    const botonesMenosCant = document.getElementsByClassName('menosCant');
     for (const botonMenosCant of botonesMenosCant) {
-      const id = botonMenosCant.getAttribute("data-id-producto");
-      agregarProductoMenosHandler(botonMenosCant, id, "cart");
+      const id = botonMenosCant.getAttribute('data-id-producto');
+      agregarProductoMenosHandler(botonMenosCant, id, 'cart');
     }
 
-    const botonesDelete = document.getElementsByClassName("delete");
+    const botonesDelete = document.getElementsByClassName('delete');
     for (const botonDelete of botonesDelete) {
-      const id = botonDelete.getAttribute("data-id-producto");
+      const id = botonDelete.getAttribute('data-id-producto');
       agregarProductoDeleteHandler(botonDelete, id);
     }
   } else {
-    carritoContainer.innerHTML = "<p>El carrito esta vacio</p>";
+    carritoContainer.innerHTML = '<p>El carrito esta vacio</p>';
   }
 
   updateCartAmount();
 };
 
 loadCart();
-
-const btnFinalizarCompra = document.getElementById("finalizarCompra");
-btnFinalizarCompra.addEventListener("click", checkout);
