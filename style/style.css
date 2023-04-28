@@ -29,7 +29,7 @@ body {
 
 .info-loggedUser p {
   color: #fff;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 15px;
   padding-bottom: 10px;
 }
@@ -48,7 +48,7 @@ body {
   padding: 7px;
   border-radius: 10px;
   background-color: #d39608;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   cursor: pointer;
   transition: 0.2s;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .container-login h1 {
-  font-family: 'Stint Ultra Condensed';
+  font-family: "Stint Ultra Condensed";
   color: #fff;
   font-weight: normal;
   font-size: 100px;
@@ -75,7 +75,7 @@ body {
 }
 
 .container-login h2 {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   color: #fff;
 }
 
@@ -85,7 +85,7 @@ body {
   height: 50px;
   margin: 30px 0 20px 0;
   padding: 20px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 18px;
 }
 
@@ -101,16 +101,16 @@ body {
   background-color: #d39608;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   text-align: center;
   line-height: 10px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
 .container-login input::placeholder {
   text-align: center;
   font-size: 15px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
 /*----------------- R E G I S T E R -----------------*/
@@ -118,7 +118,7 @@ input[type='submit'] {
 .register-txt {
   /* & Iniciar sesion button */
   margin-top: 30px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   color: #fff;
 }
 
@@ -146,7 +146,7 @@ input[type='submit'] {
   height: 50px;
   margin: 15px 0 20px 0;
   padding: 20px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 18px;
 }
 
@@ -186,7 +186,7 @@ input[type='submit'] {
 .nav-bar .elemento-nav {
   text-decoration: none;
   color: #fff;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 20px;
   transition: 0.2s;
   width: 20px;
@@ -199,6 +199,9 @@ input[type='submit'] {
 
 #weatherIcon {
   width: 6rem;
+  position: absolute;
+  top: 79px;
+  left: 280px;
 }
 
 /*----------------- H O M E -----------------*/
@@ -211,14 +214,14 @@ input[type='submit'] {
 }
 
 .titulo-home h1 {
-  font-family: 'Stint Ultra Condensed';
+  font-family: "Stint Ultra Condensed";
   color: #fff;
   font-weight: normal;
   font-size: 150px;
 }
 
 .titulo-home h2 {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   color: #fff;
   text-decoration: line-through 1px;
 }
@@ -254,7 +257,7 @@ input[type='submit'] {
 }
 
 .card p {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 12px;
   margin: 5px 10px;
 }
@@ -314,13 +317,13 @@ input[type='submit'] {
 }
 
 .nosotros-info-container p {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 28px;
   width: 800px;
 }
 
 .nosotros-info-container span {
-  font-family: 'Stint Ultra Condensed';
+  font-family: "Stint Ultra Condensed";
   font-size: 35px;
 }
 
@@ -333,7 +336,7 @@ input[type='submit'] {
 }
 
 .titulo-locales h1 {
-  font-family: 'Stint Ultra Condensed';
+  font-family: "Stint Ultra Condensed";
   color: #fff;
   font-weight: normal;
   font-size: 90px;
@@ -367,7 +370,7 @@ input[type='submit'] {
 }
 
 .locales p {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   color: #fff;
   text-transform: uppercase;
 }
@@ -430,7 +433,7 @@ input[type='submit'] {
 .carrito-container p {
   color: #fff;
   text-align: center;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: italic;
   font-size: 20px;
   width: 60%;
@@ -459,7 +462,7 @@ input[type='submit'] {
 .carrito-con-elemento p {
   color: #fff;
   padding: 20px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
 .adminCant-carrito {
@@ -489,7 +492,7 @@ input[type='submit'] {
 
 .infoDeCompra p {
   color: #fff;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-size: 30px;
   padding-bottom: 15px;
   border-bottom: 1px solid #fff;
@@ -498,7 +501,7 @@ input[type='submit'] {
 .infoDeCompra button {
   background-color: #1ed315;
   padding: 10px;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   border-radius: 10px;
   margin: 30px 0;
   cursor: pointer;
@@ -520,7 +523,7 @@ input[type='submit'] {
   justify-content: center;
   text-align: center;
   color: #fff;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   padding: 25px;
   font-size: 12px;
 }
